@@ -3,6 +3,7 @@ import qs.services
 import qs.config
 import Quickshell
 import QtQuick
+import Quickshell.Io
 
 Item {
     id: root
@@ -22,8 +23,18 @@ Item {
         radius: Appearance.rounding.full
 
         function onClicked(): void {
-            root.visibilities.session = !root.visibilities.session;
+            wlogoutProcess.running = true;
         }
+
+        Process {
+                    id: wlogoutProcess
+                    command: ["wlogout"]
+                    onExited: {
+                        if (exitCode !== 0) {
+                            console.log("wlogout exited with code:", exitCode);
+                        }
+                    }
+                }
     }
 
     MaterialIcon {
@@ -38,3 +49,5 @@ Item {
         font.pointSize: Appearance.font.size.normal
     }
 }
+
+

@@ -1,12 +1,11 @@
+import qs.components
 import qs.components.effects
 import qs.services
 import qs.config
 import qs.utils
 import QtQuick
-
 Item {
     id: root
-
     MouseArea {
         anchors.fill: parent
         cursorShape: Qt.PointingHandCursor
@@ -15,14 +14,12 @@ Item {
             visibilities.launcher = !visibilities.launcher;
         }
     }
-
-    ColouredIcon {
+    StyledText {
         anchors.centerIn: parent
-        source: SysInfo.osLogo
-        implicitSize: Appearance.font.size.large * 1.2
-        colour: Colours.palette.m3tertiary
+        text: ""
+        font.pointSize: Appearance.font.size.large * 0.95
+        color: Colours.palette.m3secondary
     }
-
-    implicitWidth: Appearance.font.size.large * 1.2
-    implicitHeight: Appearance.font.size.large * 1.2
+    implicitWidth: Appearance.font.size.large * 0.95
+    implicitHeight: Appearance.font.size.large * 0.95
 }

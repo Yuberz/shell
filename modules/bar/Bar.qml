@@ -108,6 +108,10 @@ ColumnLayout {
 
         model: Config.bar.entries
 
+        onItemAdded: (index, item) => {
+                console.log("Item added:", index, item.id, item.enabled);
+            }
+
         DelegateChooser {
             role: "id"
 
@@ -132,20 +136,42 @@ ColumnLayout {
                 }
             }
             DelegateChoice {
-                roleValue: "activeWindow"
-                delegate: WrappedLoader {
-                    sourceComponent: ActiveWindow {
-                        bar: root
-                        monitor: Brightness.getMonitorForScreen(root.screen)
-                    }
-                }
-            }
-            DelegateChoice {
                 roleValue: "tray"
                 delegate: WrappedLoader {
                     sourceComponent: Tray {}
                 }
             }
+            DelegateChoice {
+            	roleValue: "zen"
+            	delegate: WrappedLoader {
+            		sourceComponent: Zen {}
+            		}
+            }
+            DelegateChoice {
+                        	roleValue: "github"
+                        	delegate: WrappedLoader {
+                        		sourceComponent: Github {}
+                        		}
+                        }
+            DelegateChoice {
+                                                	roleValue: "lutris"
+                                                	delegate: WrappedLoader {
+                                                		sourceComponent: Lutris {}
+                                                		}
+                                                }
+                        
+            DelegateChoice {
+                            roleValue: "steam"
+                            delegate: WrappedLoader {
+                                sourceComponent: Steam {}
+                            }
+                        }
+            DelegateChoice {
+                                        roleValue: "kew"
+                                        delegate: WrappedLoader {
+                                            sourceComponent: Kew {}
+                                        }
+                                    }
             DelegateChoice {
                 roleValue: "clock"
                 delegate: WrappedLoader {

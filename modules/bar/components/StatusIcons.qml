@@ -140,17 +140,7 @@ StyledRect {
             }
         }
 
-        // Network icon
-        WrappedLoader {
-            name: "network"
-            active: Config.bar.status.showNetwork
 
-            sourceComponent: MaterialIcon {
-                animate: true
-                text: Nmcli.active ? Icons.getNetworkIcon(Nmcli.active.strength ?? 0) : "wifi_off"
-                color: root.colour
-            }
-        }
 
         // Ethernet icon
         WrappedLoader {

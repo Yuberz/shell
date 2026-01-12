@@ -6,10 +6,10 @@ JsonObject {
     property Battery battery: Battery {}
 
     component Apps: JsonObject {
-        property list<string> terminal: ["foot"]
-        property list<string> audio: ["pavucontrol"]
+        property list<string> terminal: ["ghostty"]
+        property list<string> audio: ["pwvucontrol"]
         property list<string> playback: ["mpv"]
-        property list<string> explorer: ["thunar"]
+        property list<string> explorer: ["dolphin"]
     }
 
     component Idle: JsonObject {

@@ -25,7 +25,7 @@ Item {
             Layout.bottomMargin: -(font.pointSize * 0.4)
             Layout.alignment: Qt.AlignHCenter
             text: root.timeComponents[0]
-            color: Colours.palette.m3secondary
+            color: Colours.palette.m3primary
             font.pointSize: Appearance.font.size.extraLarge
             font.family: Appearance.font.family.clock
             font.weight: 600
@@ -34,7 +34,7 @@ Item {
         StyledText {
             Layout.alignment: Qt.AlignHCenter
             text: "•••"
-            color: Colours.palette.m3primary
+            color: Colours.palette.m3secondary
             font.pointSize: Appearance.font.size.extraLarge * 0.9
             font.family: Appearance.font.family.clock
         }
@@ -43,7 +43,7 @@ Item {
             Layout.topMargin: -(font.pointSize * 0.4)
             Layout.alignment: Qt.AlignHCenter
             text: root.timeComponents[1]
-            color: Colours.palette.m3secondary
+            color: Colours.palette.m3primary
             font.pointSize: Appearance.font.size.extraLarge
             font.family: Appearance.font.family.clock
             font.weight: 600
@@ -58,11 +58,23 @@ Item {
 
             sourceComponent: StyledText {
                 text: root.timeComponents[2] ?? ""
-                color: Colours.palette.m3primary
+                color: Colours.palette.m3tertiary
                 font.pointSize: Appearance.font.size.large
                 font.family: Appearance.font.family.clock
                 font.weight: 600
             }
         }
+
+        StyledText {
+                id: date
+        
+                Layout.alignment: Qt.AlignHCenter
+        
+                horizontalAlignment: Text.AlignHCenter
+                text: Time.format("dddd")  // Weekday and day of month
+                color: Colours.palette.m3primary
+                font.pointSize: Appearance.font.size.normal
+                font.weight: 500
+            }
     }
 }
