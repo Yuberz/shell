@@ -49,8 +49,7 @@
     "idle": {
       "lockBeforeSleep": true,
       "inhibitWhenAudio": true,
-      "timeouts": [
-      ]
+      "timeouts": []
     },
     "battery": {
       "warnLevels": [
@@ -92,7 +91,7 @@
   },
   "bar": {
     "persistent": true,
-    "showOnHover": true,
+    "showOnHover": false,
     "dragThreshold": 20,
     "scrollActions": {
       "workspaces": false,
@@ -173,28 +172,26 @@
         "enabled": true,
         "id": "tray"
       },
-      
       {
         "enabled": true,
         "id": "zen"
       },
       {
-                    "enabled": true,
-                    "id": "lutris"
-                  },
+        "enabled": true,
+        "id": "lutris"
+      },
       {
-              "enabled": true,
-              "id": "github"
-            },
-      
+        "enabled": true,
+        "id": "github"
+      },
       {
         "enabled": true,
         "id": "steam"
       },
       {
-              "enabled": true,
-              "id": "kew"
-            },
+        "enabled": true,
+        "id": "kew"
+      },
       {
         "enabled": true,
         "id": "clock"
@@ -426,7 +423,7 @@
     }
   },
   "osd": {
-    "enabled": true,
+    "enabled": false,
     "hideDelay": 2000,
     "enableBrightness": true,
     "enableMicrophone": false,
