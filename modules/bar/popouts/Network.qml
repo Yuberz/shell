@@ -131,13 +131,17 @@ ColumnLayout {
                             Nmcli.disconnectFromNetwork();
                         } else {
                             root.connectingToSsid = networkItem.modelData.ssid;
-                            NetworkConnection.handleConnect(networkItem.modelData, null, network => {
-                                // Password is required - show password dialog
-                                root.passwordNetwork = network;
-                                root.showPasswordDialog = true;
-                                root.wrapper.currentName = "wirelesspassword";
-                            });
-
+                            NetworkConnection.handleConnect(
+                                networkItem.modelData,
+                                null,
+                                (network) => {
+                                    // Password is required - show password dialog
+                                    root.passwordNetwork = network;
+                                    root.showPasswordDialog = true;
+                                    root.wrapper.currentName = "wirelesspassword";
+                                }
+                            );
+                            
                             // Clear connecting state if connection succeeds immediately (saved profile)
                             // This is handled by the onActiveChanged connection below
                         }
@@ -212,7 +216,7 @@ ColumnLayout {
             anchors.centerIn: parent
             strokeWidth: Appearance.padding.small / 2
             bgColour: "transparent"
-            implicitSize: parent.implicitHeight - Appearance.padding.smaller * 2
+            implicitHeight: parent.implicitHeight - Appearance.padding.smaller * 2
             running: Nmcli.scanning
         }
     }
